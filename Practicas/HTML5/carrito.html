@@ -1,0 +1,62 @@
+
+<!DOCTYPE <html>
+</html>
+<html>
+    <head>
+        <title>Carrito de compra</title>
+    <script>
+        var total=0.0;
+        function drag(event) {
+            console.log(event);
+            var id=event.target.id;
+            var precio=0.0;
+            switch(id) {
+                case "cd":
+                precio=10.00;
+                break;
+            }
+            event.dataTransfer.setData("precio", precio);
+            event.dataTransfer.setData("id", id);
+        }
+
+        function drop(event) {
+            var precio = event.dataTransfer.getData("precio");
+            var id = event.dataTransfer.getData("id");
+            total += precio;
+             console.log(precio);
+
+            var carrito = localStorage.getItem('carrito');
+            var carritoObject;
+      
+            if(carrito){
+                carritoObject = JSON.parse(carrito);
+            } else {
+                carritoObject = [];
+            }
+
+            carritoObject.push({itemID: id, precio: precio});
+            localStorage.setItem('carrito', JSON.stringify(carritoObject));
+         
+            document.getElementById('total').innerHTML='$'+total;
+        }
+        
+        function allowdrop(event) {
+            event.preventDefault();
+        }
+    </script>
+    <style>
+        #carrito {
+            border: 1px #000000 solid;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="carrito" ondrop="drop(event)" ondragover="allowdrop(event);">Arroja aquí</div>
+         <div>Total:<div id="total">$0.00</div></div>
+        <div id="objetos">
+            <div draggable="true" id="cd" ondragstart="drag(event)">CD - $10.00</div>
+            <div>Disco duro - $7000.00</div>
+            <div>Pantalla - $600</div>
+        </div>
+    </body>
+</html>

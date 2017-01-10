@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      function aumentar(){
+        var cantidad=document.getElementById('cantidad');
+        alert(cantidad);  
+        cantidad.value=parseInt(cantidad.value)+1;
+      }
+      
+      function disminuir(){
+        var cantidad=document.getElementById('cantidad');
+        if(cantidad.value>0){
+          cantidad.value=parseInt(cantidad.value)-1;
+        }
+      }
+      </script>
+</head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <img src="bannercun.png" class="img-responsive" />
+        <h2>Visitanos!</h2>
+        <div>
+          <button id="disminuir" class="btn glyphicon glyphicon-plus" onclick="aumentar()"></button>
+          <input type="number" id="cantidad" value="0" />
+          <button id="disminuir" class="btn glyphicon glyphicon-minus" onclick="disminuir()"></button>
+          <a class="btn btn-success btn-lg" href="http://www.visitmexico.com/es/cancun" role="button">Compra ahora</a>
+        </div>
+      </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

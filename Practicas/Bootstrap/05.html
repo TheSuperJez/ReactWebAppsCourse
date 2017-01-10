@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Bootstrap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      
+      function obtenerDatos(){
+        //JSON Vacio
+        var elementos=[];
+        elementos.push({"nombre":"Carlos", "Direccion":"AV. Siempre Viva." ,"rfc":"CRLXXXX"});
+        alert(JSON.stringify(elementos));
+        //JSON con datos
+        var jsonText='[{"nombre":"Jorge", "edad":20, "rfc":"ZASJ880429xxx"}, {"nombre":"Pedro", "edad":22, "rfc":"ZASJ880429xxx"}]';
+        //Convertir JSON a String
+        var obj=JSON.parse(jsonText);
+        //Agregar
+        obj.push({"nombre": "cajaNombre", "edad":18, "rfc":"RAM"});
+        //Eliminar
+        obj.splice(0,2);
+        //Agregar en posicion
+        obj.splice(1,0,{"nombre":"Carlos", "Direccion":"AV. Siempre Viva." ,"rfc":"CRLXXXX"});
+        //Modificar Valor
+        obj[1].nombre="Jaime";
+        //Mostrar volviendo a convertir el objeto a JSON
+        alert(JSON.stringify(obj));
+        //Mostrar todo el JSON
+        for(var i=0; i<obj.length;i++){
+          alert(obj[i].rfc);
+        }
+      }
+      
+      
+      
+     </script>
+</head>
+  <body>
+    <div class="container">
+        <button onclick="obtenerDatos()">Click</button>
+        <div id="resultado"></div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

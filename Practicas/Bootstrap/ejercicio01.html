@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Template HTML</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      var productosArray=[];
+      
+      function inicializar(){
+        console.log(localStorage.getItem('json'));
+        if(localStorage.getItem('json')!=null){
+          productosArray=JSON.parse(localStorage.getItem('json'));
+        }
+        pintarResultados();
+      }
+      
+      function addProduct(){
+        var nombreTxt=document.getElementById('nombre');
+        var codigoTxt=document.getElementById('codigo');
+        var precioTxt=document.getElementById('precio');
+        productosArray.push({"nombre":nombreTxt.value, "codigo":codigoTxt.value, "precio":precioTxt.value});
+        localStorage.setItem("json", JSON.stringify(productosArray));
+        console.log(JSON.stringify(productosArray));
+        pintarResultados();
+        limpiarCampos();
+      }
+      
+      function limpiarModelo(){
+        productosArray=[];
+        localStorage.removeItem('json');
+        document.getElementById('tablaResultados').innerHTML="";
+      }
+      
+      function obtenerCabecera(){
+        document.getElementById('tablaResultados').innerHTML="";
+        var trcabecera=document.createElement("tr");
+        var thNombre=document.createElement("th");
+        var thCodigo=document.createElement("th");
+        var thPrecio=document.createElement("th");
+        var thtextoNombre=document.createTextNode("Nombre");
+        var thtextoCodigo=document.createTextNode("Codigo");
+        var thtextoPrecio=document.createTextNode("Precio");
+        thNombre.appendChild(thtextoNombre);
+        thCodigo.appendChild(thtextoCodigo);
+        thPrecio.appendChild(thtextoPrecio);        
+        trcabecera.appendChild(thNombre);
+        trcabecera.appendChild(thCodigo);
+        trcabecera.appendChild(thPrecio);
+        return trcabecera;
+      }
+      function cClosure(index){
+        return function(){eliminarProducto(index)};
+      }
+      
+      function pintarResultados(){
+        
+        //Limpiar Tabla
+        var cabecera=obtenerCabecera();
+        document.getElementById('tablaResultados').appendChild(cabecera);
+        for(var i=0;i<productosArray.length;i++){
+          var tr=document.createElement("tr");
+          //Crear Tags
+          var tdNombre=document.createElement("td");
+          var tdCodigo=document.createElement("td");
+          var tdPrecio=document.createElement("td");
+          var tdBtnEliminar=document.createElement("td");          
+          var textoNombre=document.createTextNode(productosArray[i].nombre);
+          var textoCodigo=document.createTextNode(productosArray[i].codigo);
+          var textoPrecio=document.createTextNode(productosArray[i].precio);
+          var btnEliminar=document.createElement("button");
+          btnEliminar.className="btn btn-danger";
+          (
+          function(i){
+            btnEliminar.onclick=function(){
+              eliminarProducto(i);
+              };
+          }
+          )(i);
+          //Conectar Tags
+          //Columna "Nombre""
+          tdNombre.appendChild(textoNombre);
+          tr.appendChild(tdNombre);
+          //Columna "Codigo"
+          tdCodigo.appendChild(textoCodigo);
+          tr.appendChild(tdCodigo);
+          //Columna "Precio"
+          tdPrecio.appendChild(textoPrecio);
+          tr.appendChild(tdPrecio);
+          //Boton
+          tdBtnEliminar.appendChild(btnEliminar);
+          tr.appendChild(tdBtnEliminar);
+          //Añadir a tabla  
+          document.getElementById('tablaResultados').appendChild(tr);
+        }  
+      }
+      
+      function limpiarCampos(){
+        document.getElementById('nombre').value='';
+        document.getElementById('codigo').value='';
+        document.getElementById('precio').value=''; 
+       }
+       
+       function eliminarProducto(index){
+         productosArray.splice(index,1);
+         
+         localStorage.setItem("json", JSON.stringify(productosArray));
+         
+         console.log(productosArray.length);
+         if(productosArray.length==0){
+           document.getElementById('tablaResultados').innerHTML='';
+         }
+         pintarResultados();
+       }
+    </script>
+  </head>
+  
+  <body onload="inicializar()">
+    <div class="container">
+      <header>
+        <div class="lead">Productos</div>
+      </header>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" />
+      </div>
+      <div>
+        <label for="codigo">Código:</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" />
+      </div>
+      <div>
+        <label for="precio">Precio:</label>
+        <input type="text" class="form-control" id="precio" name="precio" />
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-success" onclick="addProduct()">Agregar</button>
+        <button class="btn btn-danger" onclick="limpiarModelo();">Limpiar Modelo</button>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover" id="tablaResultados"></table>
+      </div>
+    </div>
+  </body>
+
+</html>
