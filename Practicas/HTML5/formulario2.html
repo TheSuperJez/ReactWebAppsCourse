@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba Curso</title>
+    <script>
+        var url = '';
+        document.addEventListener("DOMContentLoaded", function (event) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, errorPosition);
+            } else {
+                alert('Geolocalización no disponibles');
+                //Smith & Nephew 4
+                //innovacion.2016
+            }
+        });
+
+        function showPosition(position) {
+            url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
+                position.coords.latitude + "," + position.coords.longitude +
+                '&zoom=14&size=400x300&sensor=false';
+            document.getElementById('lat').value = position.coords.latitude;
+            document.getElementById('long').value = position.coords.longitude;
+            document.getElementById('ver').href = url;
+        }
+
+        function errorPosition(error) {
+            console.log(error);
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Clave: <input type="text" pattern="^([A-Z]{3})-([1-9][0-9]{3})$" required placeholder="AAA-1234" /> <br /> Nombre:
+        <input type="text" pattern="^[A-Za-z ]*$" required placeholder="Nombre" /> <br /> Password: <input type="password"
+            required pattern="[^\w\d]*(([0-9]+.*[A-Za-z]+.*)|[A-Za-z]+.*([0-9]+.*))" /><br /> Email: <input type="email" required
+        /><br /> Fecha: <input type="date" /><br /> File <input type="file" accept="image/*" capture="camera" /><br /> Location:
+        <input type="text" size="5" id="lat" /> <input type="text" size="5" id="long" /><br />
+        <a id="ver" target="_blank">Ver</a><br />
+        <button type="submit">Envíar</button><br />
+        <button type="reset">Reset</button><br />
+        <button type="reset" onclick="alert('Atras!');">Cancel</button>
+    </form>
+</body>
+
+</html>

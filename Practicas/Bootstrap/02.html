@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Template HTML</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script>
+			function suma(div){
+				 var numero1=document.getElementById('num1');
+				 var numero2=document.getElementById('num2');			 
+				 if((numero1.value=='' || numero2.value=='') || (isNaN(numero1.value) || isNaN(numero2.value))){
+					console.log('Entró al IF');
+					alert('Campos invalidos');
+				 }else{
+					 var result=parseFloat(numero1.value)+parseFloat(numero2.value);
+					 document.getElementById(div).innerHTML=result;
+				
+				 }
+				 	 return result;
+			 }
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<label for="num1">Numero 1</label>
+				<input type="number" class="form-control" name="num1" id="num1" />
+			</div>
+			<div>
+				<label for="num2">Numero 2</label>
+				<input type="number" class="form-control" name="num2" id="num2" />
+			</div>
+			<div>
+				<input type="button" class="btn glyphicon glyphicon-plus" value="+" id="mas" onclick="suma('resultado')" />
+				<button class="btn glyphicon glyphicon-music id="menos"></button>
+				<input type="button" class="btn" value="*" id="multi" />
+				<input type="button" class="btn" value="/" id="entre" />
+			</div>
+			<div id="resultado"></div>
+		</div>
+	</body>
+
+</html>
