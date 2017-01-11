@@ -14,7 +14,8 @@ module.exports = {
             query: {
                 presets: ['es2015']
             }
-		}] 
+		},
+		{ test: /\.less$/, loader: "style!css!less" }] 
 	},
 	devServer: {
 		port: 8888,
