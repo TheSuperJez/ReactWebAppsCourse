@@ -26,7 +26,7 @@ export const loadCandidates = () => {
 
 export const saveCandidate = (question) => {
 	return (dispatch) => {
-		dispatch({ type: SAVE_CANDIDATE, question: question });
+		dispatch({ type: SAVE_CANDIDATE, question });
 
 	};
 };

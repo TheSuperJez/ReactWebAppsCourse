@@ -9,8 +9,8 @@
 6 silly lifecycle curso-react@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle curso-react@1.0.0~start: curso-react@1.0.0
 8 verbose lifecycle curso-react@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle curso-react@1.0.0~start: PATH: /home/jzaragoza/Software/node/lib/node_modules/npm/bin/node-gyp-bin:/home/jzaragoza/Desarrollo/repositorios/react-template/react-redux-plantilla/node_modules/.bin:/home/jzaragoza/Software/node/bin:/home/jzaragoza/Software/node/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jzaragoza/Android/Sdk/platform-tools:/home/jzaragoza/Software/lein:/home/jzaragoza/Software/apache-maven-3.3.9/bin
-10 verbose lifecycle curso-react@1.0.0~start: CWD: /home/jzaragoza/Desarrollo/repositorios/react-template/react-redux-plantilla
+9 verbose lifecycle curso-react@1.0.0~start: PATH: /home/jzaragoza/Software/node/lib/node_modules/npm/bin/node-gyp-bin:/home/jzaragoza/Desarrollo/repositorios/HTML5Curso/Ejemplos/react-redux-plantilla-reducida/node_modules/.bin:/home/jzaragoza/Software/node/bin:/home/jzaragoza/Software/node/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/jzaragoza/Android/Sdk/platform-tools:/home/jzaragoza/Software/lein:/home/jzaragoza/Software/apache-maven-3.3.9/bin
+10 verbose lifecycle curso-react@1.0.0~start: CWD: /home/jzaragoza/Desarrollo/repositorios/HTML5Curso/Ejemplos/react-redux-plantilla-reducida
 11 silly lifecycle curso-react@1.0.0~start: Args: [ '-c', 'npm-run-all --parallel open:src lint:watch' ]
 12 silly lifecycle curso-react@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle curso-react@1.0.0~start: Failed to exec start script
@@ -25,7 +25,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid curso-react@1.0.0
-16 verbose cwd /home/jzaragoza/Desarrollo/repositorios/react-template/react-redux-plantilla
+16 verbose cwd /home/jzaragoza/Desarrollo/repositorios/HTML5Curso/Ejemplos/react-redux-plantilla-reducida
 17 error Linux 3.16.0-4-amd64
 18 error argv "/home/jzaragoza/Software/node/bin/node" "/home/jzaragoza/Software/node/bin/npm" "start"
 19 error node v6.5.0

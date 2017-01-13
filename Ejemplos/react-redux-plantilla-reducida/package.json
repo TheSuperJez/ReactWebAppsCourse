@@ -15,7 +15,7 @@
     "react",
     "redux"
   ],
-  "author": "betotto",
+  "author": "thesuperjez",
   "license": "MIT",
   "dependencies": {
     "axios": "0.12.0",
