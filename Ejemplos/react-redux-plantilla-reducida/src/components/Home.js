@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+
 import {connect} from 'react-redux';
 
 class App extends React.Component {
@@ -33,10 +34,5 @@ App.propTypes = {
 	loading: PropTypes.bool.isRequired
 };
 
-function mapStateToProps(state) {
-	return {
-		loading: state.ajaxCallsInProgress > 0
-	};
-}
 
-export default connect(mapStateToProps)(App);
+export default App;

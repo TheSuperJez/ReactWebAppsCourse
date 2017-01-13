@@ -54,7 +54,6 @@ App.propTypes = {
 
 function mapStateToProps(state) {
 	return {
-		loading: state.ajaxModule > 0,
 		candidateList: state.candidateModule.get('candidateList')
 	};
 }
