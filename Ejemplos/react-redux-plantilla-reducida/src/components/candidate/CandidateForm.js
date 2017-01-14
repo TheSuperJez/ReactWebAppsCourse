@@ -1,5 +1,5 @@
+import {Button, Col, ControlLabel, FormControl, FormGroup, Row} from 'react-bootstrap';
 import React, {PropTypes} from 'react';
-import {FormControl, FormGroup, ControlLabel, Col, Button, Row} from 'react-bootstrap';
 
 class CandidateForm extends React.Component {
 
@@ -91,7 +91,7 @@ class CandidateForm extends React.Component {
 									<ControlLabel>{'Edad: '}</ControlLabel>
 								</Col>
 								<Col md={5}>
-									<FormControl type="text" bsSize="small" disabled
+									<FormControl type="text" bsSize="small"
 										value={this.state.edad} />
 								</Col>
 							</Row>

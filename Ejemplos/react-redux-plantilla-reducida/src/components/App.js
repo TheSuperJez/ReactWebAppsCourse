@@ -1,18 +1,10 @@
 import {Nav, NavItem, Navbar} from 'react-bootstrap';
 import React, {PropTypes} from 'react';
 
-import Dots from './common/Dots';
-import {connect} from 'react-redux';
-import {loadCandidates} from '../modules/candidateModule';
-
 class App extends React.Component {
 
 	constructor(props, context) {
 		super(props, context);   
-	}
-
-	componentDidMount() {
-		this.props.loadCandidates();
 	}
     
 	render() {
@@ -36,9 +28,6 @@ class App extends React.Component {
 					</Navbar.Collapse>
 				</Navbar>
 				<div className="container-fluid">
-					{this.props.loading === true && (
-						<Dots />
-					)}
 					{this.props.children}
 				</div>
 			</div>
@@ -52,16 +41,4 @@ App.propTypes = {
 	loadCandidates: PropTypes.func
 };
 
-function mapStateToProps(state) {
-	return {
-		candidateList: state.candidateModule.get('candidateList')
-	};
-}
-
-function mapDispatchToProps(dispatch) {
-	return {
-		loadCandidates: () => dispatch(loadCandidates())
-	};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
