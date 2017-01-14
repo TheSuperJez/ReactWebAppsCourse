@@ -1,8 +1,8 @@
 import initialState from './initialState';
-
-const LOAD_CANDIDATE_LIST = 'LOAD_CANDIDATE_LIST';
-const SAVE_CANDIDATE = 'SAVE_CANDIDATE';
-
+//Actions types
+export const LOAD_CANDIDATE_LIST = 'LOAD_CANDIDATE_LIST';
+export const SAVE_CANDIDATE = 'SAVE_CANDIDATE';
+//Reducer
 export default function reducer(state = initialState.get('candidateModule'), action) {
 	switch (action.type) {
 	case LOAD_CANDIDATE_LIST: {
@@ -16,7 +16,7 @@ export default function reducer(state = initialState.get('candidateModule'), act
 	default: return state;
 	}
 }
-
+//Actions (Deberían documentarse)
 export const loadCandidates = () => {
 	return (dispatch) => {
 		dispatch({ type: LOAD_CANDIDATE_LIST });
