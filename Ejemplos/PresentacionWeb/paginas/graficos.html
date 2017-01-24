@@ -1,0 +1,82 @@
+<script src="js/scriptsGraficos.js"></script>
+<h1>Ejemplo SVG</h1>
+<table width="100%">
+    <tr>
+        <th>Elemento</th>
+        <th>Codigo</th>
+        <th>Resultado</th>
+    </tr>
+    <tr>
+        <td>circle</td>
+        <td>
+            <xmp>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
+            </xmp>
+        </td>
+        <td>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <h3>Liberias </h3>
+            <ul style="width:200px;margin:auto">
+                <li>D3.js — Data-Driven Documents</li>
+                <li>Google Charts</li>
+                <li>Chartist.js</li>
+                <li>FusionCharts</li>
+                <li>Highcharts</li>
+            </ul>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<h1>Ejemplo Canvas</h1>
+<table width="100%">
+    <tr>
+        <th>Elemento</th>
+        <th>Codigo</th>
+        <th>Resultado</th>
+    </tr>
+    <tr>
+        <td>create circle</td>
+        <td>
+            <xmp>
+                <canvas id="myCanvas" width="200px" height="267px"></canvas>
+                    var canvas = document.getElementById("myCanvas");
+                    var ctx = canvas.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+            </xmp>
+        </td>
+        <td>
+            <canvas id="myCanvas" width="200px" height="267px"></canvas>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <h3>Liberias </h3>
+            <ul style="width:200px;margin:auto">
+                <li>Canvas.js</li>
+                <li>Go.js</li>
+                <li>Epoch</li>
+            </ul>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+</script>
+

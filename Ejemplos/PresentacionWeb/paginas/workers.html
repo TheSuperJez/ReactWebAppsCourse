@@ -1,0 +1,27 @@
+<h3>Workers</h3>
+
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="iniciaWorker()">Start Worker</button> 
+<button onclick="pararWorker()">Stop Worker</button>
+<input type="text" >
+<script>
+var w;
+function iniciaWorker() {
+    console.log('Inicializando Worker');
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("../js/ejemploWorker.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Web Worker no soportado.";
+    }
+}
+
+function pararWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>

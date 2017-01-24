@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<h2>Drag & Drop</h2>
+<table width="100%" border="1">
+    <tr>
+        <td  ondrop="drop(event)" ondragover="allowDrop(event)" width="25%">
+            <img src="imagenes/logoIW.svg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+        </td>
+        <td  ondrop="drop(event)" ondragover="allowDrop(event)" width="25%">
+            
+        </td>
+        <td width="25%"></td>
+        <td ondrop="drop(event)" ondragover="allowDrop(event)" width="25%"></td>
+    </tr>
+</table>
+</body>
+</html>
