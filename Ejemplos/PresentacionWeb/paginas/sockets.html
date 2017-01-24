@@ -1,0 +1,53 @@
+<div id="sse">
+    <a href="javascript:WebSocketTest()">Run WebSocket</a>
+    <button onclick="send('Hola Mundo')">Saludar</button>
+</div>
+
+<script>
+	var ws=null;
+    function WebSocketTest() {
+        if ("WebSocket" in window) {
+            alert("WebSocket is supported by your Browser!");
+
+            // Let us open a web socket
+            ws = new WebSocket("ws://localhost:9000/");
+
+            ws.onopen = function () {
+				alert('Connected');
+            };
+
+            ws.onmessage = function (evt) {
+				
+				var msg = JSON.parse(evt.data); 
+				var type = msg.type;
+				var umsg = msg.message;
+				var uname = msg.name;
+				var ucolor = msg.color;
+               
+				if(type == 'system') {
+					alert("Mensaje del sistema: "+ umsg);
+				}
+				if(type == 'usermsg') {
+					alert("Mensaje de: "+ uname +": "+ umsg);
+				}
+            };
+
+            ws.onclose = function () {
+                alert("Connection is closed...");
+            };
+        } else {
+            alert("WebSocket NOT supported by your Browser!");
+        }
+    }
+    function send(txt){
+		msg = {
+					type: 'usermsg',
+					message: txt,
+					name: 'Test',
+					color : '#000000'
+				};			
+				 alert("Sending message to server: " + JSON.stringify(msg));
+				ws.send(JSON.stringify(msg));
+               
+			}
+</script>

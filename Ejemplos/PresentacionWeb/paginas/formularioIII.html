@@ -1,0 +1,96 @@
+<div>
+    <h2 align="center">HTML5 Nuevos Elementos</h2>
+    <form id="the-form" method="GET" action="index.html">
+        <table width="100%">
+            <tr>
+                <th>Elemento</th>
+                <th>Codigo</th>
+                <th>Resultado</th>
+            </tr>
+            <tr>
+                <td>datalist</td>
+                <td>
+                    <xmp>
+                        <input type="text" name="characters" list="data-list">
+                        <datalist id="data-list">
+                            <option value="HTML5"></option>
+                            <option value="CSS3"></option>
+                            <option value="LESS"></option>
+                            <option value="Bootstrap"></option>
+                            <option value="Javascript"></option>
+                        </datalist>
+                    </xmp>
+                </td>
+                <td>
+                    <input type="text" name="characters" list="data-list">
+                    <datalist id="data-list">
+                        <option value="HTML5"></option>
+                        <option value="CSS3"></option>
+                        <option value="LESS"></option>
+                        <option value="Bootstrap"></option>
+                        <option value="Javascript"></option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>progress</td>
+                <td>
+                    <xmp>
+                        <progress max="100" value="70">70%</progress>
+                    </xmp>
+                </td>
+                <td>
+                    <progress max="100" value="70">70%</progress>
+                </td>
+            </tr>
+            <tr>
+                <td>meter</td>
+                <td>
+                    <xmp>
+                        <meter min="0" max="10" value="7"></meter>
+                    </xmp>
+                </td>
+                <td>
+                    <meter min="0" max="10" value="7"></meter>
+                </td>
+            </tr>
+            <tr>
+                <td>output</td>
+                <td>
+                    <div>
+                        <xmp>
+                            <input type="range" id="range" name="range">
+                            <output for="range" id="output"></output>
+                    </div>
+                    <script>
+                        (function () {
+                            var theForm = document.getElementById("the-form");
+                            if ("oninput" in theForm) {
+                                theForm.addEventListener("input", function () {
+                                    output.value = range.value;
+                                }, false);
+                            }
+                        })();
+                    </script>
+</xmp>
+</td>
+<td>
+<div>
+                            <input type="range" id="range" name="range">
+                            <output for="range" id="output"></output>
+                    </div>
+                    <script>
+                        (function () {
+                            var theForm = document.getElementById("the-form");
+                            if ("oninput" in theForm) {
+                                theForm.addEventListener("input", function () {
+                                    output.value = range.value;
+                                }, false);
+                            }
+                        })();
+                    </script>
+
+</td>
+</tr>
+</table>
+</form>

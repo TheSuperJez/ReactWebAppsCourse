@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h3>CACHE</h3>
+    <table border="5">
+        <tr>
+            <th>Elemento/Atributo</th>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+        </tr>
+        <tr>
+            <td>manifest</td>
+            <td>
+                <xmp>
+                    <html manifest="eje.appcache">
+                    ...
+                    </html>
+                </xmp>
+            </td>
+            <td>
+                Para habilitar la caché de aplicación para una aplicación, incluye el atributo "manifest" en la etiqueta html del documento:
+            </td>
+        </tr>
+        <tr>
+            <td>Estructura Cache</td>
+            <td>
+                <xmp>
+                    CACHE MANIFEST
+                    index.html
+                    stylesheet.css
+                    images/logo.png
+                    scripts/main.js
+                    # Resources that require the user to be online.
+                    NETWORK:
+                    preciosas.php
+
+                    FALLBACK:
+                    images/large/ images/offline.jpg
+                    *.html /offline.html
+                </xmp>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <a href="http://www.w3schools.com/html/tryhtml5_html_manifest.htm">Prueba Cache w3school</a>
+</body>
+
+</html>

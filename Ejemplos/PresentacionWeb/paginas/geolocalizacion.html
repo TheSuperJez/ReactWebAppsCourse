@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="ejemploGeo">Obten Posicion</p>
+
+    <button onclick="getLocation()">Click</button>
+<table>
+    <tr>
+        <td>
+            <div id="mapholder"></div>
+        </td>
+        <td>
+            <img src="imagenes/geoLoca.png">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>OBJETO POSITION</h4>
+            Es el objeto que nos indicará la ubicación del usuario
+        </td>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Tipo de dato</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>coords.latitude</code></td>
+                        <td><code>double</code></td>
+                        <td>Latitud en grados decimales</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.longitude</code></td>
+                        <td><code>double</code></td>
+                        <td>Longitud en grados decimales</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.accuracy</code></td>
+                        <td><code>double</code></td>
+                        <td>Precisión en metros</td>
+                    </tr>
+                    <tr>
+                        <td><code>timestamp</code></td>
+                        <td><code>DOMTimeStamp</code></td>
+                        <td>Momento de la toma de estos datos</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.altitude</code></td>
+                        <td><code>double</code> o <code>null</code></td>
+                        <td>Altitud en metros</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.altitudeAccuracy</code></td>
+                        <td><code>double</code> o <code>null</code></td>
+                        <td>Precisión de la altitud en metros</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.heading</code></td>
+                        <td><code>double</code> o <code>null</code></td>
+                        <td>Orientación en grados decimales en el sentido de las agujas del reloj</td>
+                    </tr>
+                    <tr>
+                        <td><code>coords.speed</code></td>
+                        <td><code>double</code> o <code>null</code></td>
+                        <td>Velocidad en metros/segundo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<script>
+    var x = document.getElementById("ejemploGeo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            x.innerHTML = "Geolocalizacion no soportada por tu Navegador.";
+        }
+    }
+
+    function showPosition(position) {
+        var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+        var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+            + latlon + "&zoom=14&size=400x300&sensor=false";
+        document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "El usuario nego Geoloca"
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Informacion de localicazion no disponible"
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "Tiempo agotado para obtener la localizacion"
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "Error desconocido"
+                break;
+        }
+    }
+</script>
+
+</body>
+
+</html>

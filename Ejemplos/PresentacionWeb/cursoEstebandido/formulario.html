@@ -1,0 +1,33 @@
+<h3>Formulario Registro</h3>
+<form>
+    <table>
+        <tr>
+            <td>Clave*:</td>
+            <td><input type="text" pattern="[A-Z0-9]*" ></td>
+        </tr>
+        <tr>
+            <td>Nombre*:</td>
+            <td><input type="text" pattern="[^0-9]*" ></td>
+        </tr>
+        <tr>
+            <td>Password*:</td>
+            <td><input type="password" pattern="[A-Za-z]+[0-9]+"></td>
+        </tr>
+        <tr>
+            <td>Correo*:</td>
+            <td><input type="email" ></td>
+        </tr>
+        <tr>
+            <td>Fecha Nac:</td>
+            <td><input type="date" ></td>
+        </tr>
+        <tr>
+            <td>Foto:</td>
+            <td><input type="file" ></td>
+        </tr>
+    </table>
+    <br>
+<button type="reset" value="reset">Reset</button>
+<button type="submit" value="enviar">Enviar</button>
+<button type="button" value="cancelar">Cancelar</button>
+</form>

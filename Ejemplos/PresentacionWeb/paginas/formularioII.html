@@ -1,0 +1,155 @@
+<h2 align="center">HTML5 Nuevos Atributos a Input</h2>
+<form method="GET" action="index.html">
+    <!-- novalidate -->
+    <table width="80%" align="center">
+        <tr>
+            <th>Nombre Atributo</th>
+            <th>Codigo</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>autocomplete</td>
+            <td>
+                <xmp>
+                    <input type="text" autocomplete="on">
+                </xmp>
+            </td>
+            <td><input type="text" autocomplete="on"></td>
+        </tr>
+        <tr>
+            <td>autofocus</td>
+            <td>
+                <xmp>
+                    <input type="text" autofocus>
+                </xmp>
+            </td>
+            <td><input type="text" autofocus></td>
+        </tr>
+        <tr>
+            <td>formaction</td>
+            <td>
+                <xmp>
+                    <input type="submit" formaction="paginas/formulario.html" value="formularioI">
+                </xmp>
+            </td>
+            <td><input type="submit" formaction="paginas/formulario.html" value="formularioI"></td>
+        </tr>
+        <tr>
+            <td>formmethod</td>
+            <td>
+                <xmp>
+                    <input type="submit" formmethod="POST" value="Enviado como POST">
+                </xmp>
+            </td>
+            <td><input type="submit" formmethod="POST" value="Enviado como POST"></td>
+        </tr>
+        <tr>
+            <td>formnovalidate</td>
+            <td>
+                <xmp>
+                    <input type="submit" formnovalidate value="Don't validate">
+                </xmp>
+            </td>
+            <td>
+                Email <input type="email">
+                <input type="submit" formnovalidate value="Don't validate"></td>
+        </tr>
+        <tr>
+            <td>formtarget</td>
+            <td>
+                <xmp>
+                    <input type="submit" formtarget="_blank" value="Post to new tab/window">
+                </xmp>
+            </td>
+            <td><input type="submit" formtarget="_blank" value="Post to new tab/window"></td>
+        </tr>
+        <tr>
+            <td>list</td>
+            <td>
+                <xmp>
+                    <input type="text" list="characters">
+                </xmp>
+            </td>
+            <td><input type="text" list="characters"></td>
+        </tr>
+        <tr>
+            <td>range</td>
+            <td>
+                <xmp>
+                    <input id="max95" type="range" max="95">
+                    <input id="resultMax95" type="text">
+                </xmp>
+            </td>
+            <td>
+                <input id="max95" type="range" max="95">
+                <input id="resultMax95" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>range</td>
+            <td>
+                <xmp>
+                    <input id="rango" type="range" min="100" max="200" step="2">
+                    <input id="resultRango" type="text">
+                </xmp>
+            </td>
+            <td>
+                <input id="rango" type="range" min="100" max="200" step="2">
+                <input id="resultRango" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>multiple</td>
+            <td>
+                <xmp>
+                    <input type="file" multiple>
+                </xmp>
+            </td>
+            <td><input type="file" multiple></td>
+        </tr>
+        <tr>
+            <td>pattern</td>
+            <td>
+                <xmp>
+                    <input type="text" pattern="[A-Z]*">
+                </xmp>
+            </td>
+            <td><input type="text" pattern="[A-Z]*"></td>
+        </tr>
+        <tr>
+            <td>palceholder</td>
+            <td>
+                <xmp>
+                    <input type="placeholder" name="first-name" placeholder="Eje:...">
+                </xmp>
+            </td>
+            <td><input type="placeholder" name="first-name" placeholder="Eje: Pancrasio Teofilo Chencho"></td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>
+                <xmp>
+                    <input type="text" readonly>
+                </xmp>
+            </td>
+            <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>
+                <xmp>
+                    <input type="text" required>
+                </xmp>
+            </td>
+            <td><input type="text" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><xmp><input type="number" step="3"></xmp></td>
+            <td><input type="number" step="3"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+<script src="js/scriptsFormularioII.js"></script>
