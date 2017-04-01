@@ -3,11 +3,17 @@ import React, {PropTypes} from 'react';
 import CandidateRow from './CandidateTableRow';
 import {Table} from 'react-bootstrap';
 
-const CandidateList = ({candidatesList, getYears}) => {
+/**
+* Componente que muestra la lista de candidatos
+*
+* @class CandidateList
+*/
+const CandidateList = ({candidatesList, getYears, eliminarCandidato}) => {
 	let candidate = candidatesList.map((element, index) => {
 		let propiedades = element;
 		propiedades.getYears = getYears;
-		
+		propiedades.eliminarCandidato = eliminarCandidato;
+		propiedades.index = index;
 		return (
 			<CandidateRow key={index} {...propiedades} />
 		); 
@@ -21,6 +27,7 @@ const CandidateList = ({candidatesList, getYears}) => {
 					<th>{'Ape paterno'}</th>
 					<th>{'Ape materno'}</th>
 					<th>{'Edad'}</th>
+					<th>{'Eliminar'}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,7 +39,8 @@ const CandidateList = ({candidatesList, getYears}) => {
 
 CandidateList.propTypes = {
 	candidatesList: PropTypes.array,
-	getYears: PropTypes.func 
+	getYears: PropTypes.func,
+	eliminarCandidato: PropTypes.func
 };
 
 export default CandidateList;
