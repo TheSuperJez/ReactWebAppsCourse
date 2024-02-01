@@ -1,4 +1,4 @@
 # React Web Apps Development
-Curso de desarrollo de aplicaciones Web con React y HTML5  
+Web development Course with basic contents and React
 Material de ejemplo  
 https://thesuperjez.github.io/ReactWebAppsCourse/Ejemplos/PresentacionWeb/
